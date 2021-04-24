@@ -37,7 +37,7 @@ public class PixelCameraController : MonoBehaviour {
 
 		// Search for player if there is no target
 		if (m_Target == null) {
-			m_Target = GameObject.FindGameObjectWithTag("Player").transform;
+			// m_Target = GameObject.FindGameObjectWithTag("Player").transform;
 
 			if (m_Target == null) {
 				Debug.Log ("There is no camera target");
