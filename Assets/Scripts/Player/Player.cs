@@ -120,11 +120,11 @@ namespace Actors {
                 Speed.y = 0;
             }
 
-            if (Speed.x != 0) {
-                var scale = transform.localScale;
-                scale.x = Mathf.Sign (Speed.x);
-                transform.localScale = scale;
-            }
+            // if (Speed.x != 0) {
+            //     var scale = transform.localScale;
+            //     scale.x = Mathf.Sign (Speed.x);
+            //     transform.localScale = scale;
+            // }
 
             UpdateSprite ();
         }
@@ -142,16 +142,19 @@ namespace Actors {
             }
 
             if (fsm.State == States.Idle) {
-                anim.SetBool("Moving", false);
+                anim.Play("Idle");
             } else if (fsm.State == States.Walk) {
-                anim.SetBool("Moving", true);
-                anim.SetFloat("PositionX", this.Speed.x);
-                anim.SetFloat("PositionY", this.Speed.y);
+                anim.Play("Walk");
+                
+                var direction = this.Speed.normalized;
+
+                anim.SetFloat("PositionX", direction.x);
+                anim.SetFloat("PositionY", direction.y);
             }
         }
 
         private IEnumerator Dash_Enter () {
-            AudioManager.Instance.PlaySfx(dashClip);
+            // AudioManager.Instance.PlaySfx(dashClip);
             dashCooldownTimer = DashCooldown;
             Speed = Vector2.zero;
             DashDir = Vector2.zero;
