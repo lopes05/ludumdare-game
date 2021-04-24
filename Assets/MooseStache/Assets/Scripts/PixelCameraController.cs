@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -37,7 +37,7 @@ public class PixelCameraController : MonoBehaviour {
 
 		// Search for player if there is no target
 		if (m_Target == null) {
-			// m_Target = GameObject.FindGameObjectWithTag("Player").transform;
+			m_Target = GameObject.FindGameObjectWithTag("Player").transform;
 
 			if (m_Target == null) {
 				Debug.Log ("There is no camera target");
@@ -98,9 +98,13 @@ public class PixelCameraController : MonoBehaviour {
 			int targetX = (int)m_Target.position.x + m_XOffset;
 			int targetY = (int)m_Target.position.y + m_YOffset;
 
+			Debug.Log(Position.x.ToString() + " " + targetX.ToString());	
+			Debug.Log(Position.y.ToString() + " " + targetY.ToString());	
+
 			// Follow Horizontally
 			if (Position.x != targetX) {
-				Position.x = (int)Mathf.Lerp (Position.x, targetX, 1/m_DampTime * Time.deltaTime); // Smooth
+				Position.x = Mathf.Lerp (Position.x, targetX, 1/m_DampTime * Time.deltaTime); // Smooth
+				// Position.x = targetX;
 
 				// Horizontal Bounds
 				if (m_EnableBounds) {
@@ -110,14 +114,16 @@ public class PixelCameraController : MonoBehaviour {
 
 			// Follow Vertically
 			if (Position.y != targetY) {
-				Position.y = (int)Mathf.Lerp (Position.y, targetY, 1/m_DampTime * Time.deltaTime); // Smooth
+				Position.y = Mathf.Lerp (Position.y, targetY, 1/m_DampTime * Time.deltaTime); // Smooth
+				// Position.y = targetY;
 
 				// Vertical Bounds
 				if (m_EnableBounds) {
 					Position.y = Mathf.Clamp ((int)Position.y, m_MinY, m_MaxY);
 				}
 			}
-				
+
+
 		}
 
 	}

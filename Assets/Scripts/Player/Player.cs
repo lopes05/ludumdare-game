@@ -176,9 +176,9 @@ namespace Actors {
             }
 
             // Screenshake
-            // if (PixelCamera.instance != null) {
-            //     PixelCamera.instance.DirectionalShake (DashDir);
-            // }
+            if (PixelCameraController.instance != null) {
+                PixelCameraController.instance.DirectionalShake (DashDir);
+            }
 
             yield return new WaitForSeconds (DashTime);
 
