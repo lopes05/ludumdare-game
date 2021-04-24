@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Player
   - 
   - Solid
   - OneWay
@@ -43,4 +43,7 @@ TagManager:
     locked: 0
   - name: Actors
     uniqueID: 3653940321
+    locked: 0
+  - name: Front UI
+    uniqueID: 3226977099
     locked: 0

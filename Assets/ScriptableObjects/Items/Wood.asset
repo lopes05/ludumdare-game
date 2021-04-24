@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2af94cf74288489ffe420ba089b2f, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300318, guid: 961d2230826e0813422c822d54802fd3, type: 3}
+  sprite: {fileID: 21300000, guid: e2d9e1c8002bce742b99619bdb44a393, type: 3}

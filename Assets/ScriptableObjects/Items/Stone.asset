@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2af94cf74288489ffe420ba089b2f, type: 3}
   m_Name: Stone
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300298, guid: 961d2230826e0813422c822d54802fd3, type: 3}
+  sprite: {fileID: 21300000, guid: 9c56b357262b0bb46832f6e6fb50bd7d, type: 3}
