@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using utils;
 
-public class ItemContainer : MonoBehaviour {
+public class ItemContainer : Interactable {
     public ScriptableItem item;
-    public CircleCollider2D areaOfEffect;
-    public LayerMask layerMask;
     public GameObject floatingButtons;
 
     List<Collider2D> insideArea = new List<Collider2D>();
@@ -18,7 +17,15 @@ public class ItemContainer : MonoBehaviour {
         sr.sprite = item.sprite;
     }
 
-    public void SetButton(bool active) {
+    public override void SetButton(bool active) {
         floatingButtons.SetActive(active);
+    }
+
+    public override bool HandleClick(GameObject obj) {
+        var itemInRange = obj.GetComponent<ItemInRange>();
+
+        itemInRange.inventory.AddItem(item);
+        Destroy(gameObject);
+        return true;
     }
 }

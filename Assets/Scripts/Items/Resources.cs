@@ -10,11 +10,11 @@ public class Resources : MonoBehaviour {
 
     void Awake() {
         inventory.items = new List<ScriptableItem>();
-        inventory.onItemAdd += UpdateTexts;
+        inventory.onItemsUpdate += UpdateTexts;
     }
 
 
-    void UpdateTexts(ScriptableItem item) {
+    void UpdateTexts(List<ScriptableItem> item) {
         woodText.text = "Wood: " + inventory.HowMany("Wood");
         stoneText.text = "Stone: " + inventory.HowMany("Stone");
     }

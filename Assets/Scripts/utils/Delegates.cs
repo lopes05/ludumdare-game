@@ -1,4 +1,6 @@
+using System.Collections.Generic;
+
 namespace utils {
     public delegate void VoidDelegate();
-    public delegate void ItemDelegate(ScriptableItem item);
+    public delegate void ItemDelegate(List<ScriptableItem> item);
 }

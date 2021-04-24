@@ -98,9 +98,6 @@ public class PixelCameraController : MonoBehaviour {
 			int targetX = (int)m_Target.position.x + m_XOffset;
 			int targetY = (int)m_Target.position.y + m_YOffset;
 
-			Debug.Log(Position.x.ToString() + " " + targetX.ToString());	
-			Debug.Log(Position.y.ToString() + " " + targetY.ToString());	
-
 			// Follow Horizontally
 			if (Position.x != targetX) {
 				Position.x = Mathf.Lerp (Position.x, targetX, 1/m_DampTime * Time.deltaTime); // Smooth
