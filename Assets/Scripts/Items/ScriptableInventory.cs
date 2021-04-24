@@ -19,9 +19,8 @@ public class ScriptableInventory : ScriptableObject {
     }
 
     public void RemoveItems(string type, int amount) {
-        var toRemove = items.Where((x) => x.type == type).Take(amount);
-        items = items.Where(x => !toRemove.Contains(x)).ToList();
-
+        var remaining = items.Where((x) => x.type == type).Skip(amount);
+        items = items.Where((x) => x.type != type).Concat(remaining).ToList();
         onItemsUpdate(items);
     }
 }
