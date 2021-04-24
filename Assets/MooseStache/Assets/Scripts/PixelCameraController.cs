@@ -1,4 +1,4 @@
-﻿﻿using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -100,7 +100,7 @@ public class PixelCameraController : MonoBehaviour {
 
 			// Follow Horizontally
 			if (Position.x != targetX) {
-				Position.x = Mathf.Lerp (Position.x, targetX, 1/m_DampTime * Time.deltaTime); // Smooth
+				Position.x = (int)Mathf.Lerp (Position.x, targetX, 1/m_DampTime * Time.deltaTime); // Smooth
 				// Position.x = targetX;
 
 				// Horizontal Bounds
@@ -111,7 +111,7 @@ public class PixelCameraController : MonoBehaviour {
 
 			// Follow Vertically
 			if (Position.y != targetY) {
-				Position.y = Mathf.Lerp (Position.y, targetY, 1/m_DampTime * Time.deltaTime); // Smooth
+				Position.y = (int)Mathf.Lerp (Position.y, targetY, 1/m_DampTime * Time.deltaTime); // Smooth
 				// Position.y = targetY;
 
 				// Vertical Bounds
